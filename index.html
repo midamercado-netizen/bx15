@@ -13,7 +13,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: linear-gradient(135deg, #0f4c75, #1b262c, #3282b8);
             color: #fff;
             min-height: 100vh;
             padding: 10px;
@@ -27,36 +27,44 @@
         header {
             text-align: center;
             padding: 15px 10px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 12px;
+            background: rgba(13, 36, 54, 0.9);
+            border-radius: 15px;
             margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+            border: 2px solid #bbe1fa;
             position: relative;
         }
 
         h1 {
             font-size: 1.8rem;
             margin-bottom: 8px;
-            color: #ffcc00;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #bbe1fa;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(45deg, #bbe1fa, #3282b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .admin-btn {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: #2196F3;
+            background: linear-gradient(45deg, #3282b8, #0f4c75);
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
             font-size: 0.9rem;
             transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid #bbe1fa;
         }
 
         .admin-btn:hover {
-            background: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #0f4c75, #3282b8);
         }
 
         .game-area {
@@ -77,20 +85,23 @@
         }
 
         .betting-panel {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            background: rgba(13, 36, 54, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+            border: 2px solid #3282b8;
         }
 
         .player-info {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 15px;
-            padding: 12px;
-            background: rgba(255, 204, 0, 0.2);
-            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #3282b8, #0f4c75);
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            border: 1px solid #bbe1fa;
         }
 
         @media (min-width: 480px) {
@@ -101,38 +112,71 @@
         }
 
         .balance {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             text-align: center;
+            color: #bbe1fa;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .balance.zero {
+            color: #ff6b6b;
+            animation: pulse-alert 2s infinite;
         }
 
         .bet-amount {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            position: relative;
         }
 
         .bet-amount input {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.1rem;
             margin-top: 5px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #3282b8;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .max-bet-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1b262c;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .max-bet-btn:hover {
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+            transform: translateY(-50%) scale(1.05);
         }
 
         .bet-type {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .bet-type h3 {
-            margin-bottom: 8px;
-            color: #ffcc00;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #bbe1fa;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .bet-options {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 8px;
+            gap: 10px;
         }
 
         @media (min-width: 480px) {
@@ -142,60 +186,73 @@
         }
 
         .bet-option {
-            padding: 12px 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+            padding: 15px 10px;
+            background: linear-gradient(135deg, #3282b8, #0f4c75);
+            border-radius: 8px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid transparent;
-            font-size: 0.9rem;
+            border: 2px solid #bbe1fa;
+            font-size: 0.95rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .bet-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .bet-option.selected {
-            background: #ffcc00;
-            color: #000;
+            background: linear-gradient(45deg, #bbe1fa, #3282b8);
+            color: #0f4c75;
             font-weight: bold;
-            border-color: #fff;
+            border-color: #0f4c75;
+            transform: translateY(-2px);
         }
 
         .number-selection {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .number-selection h3 {
-            margin-bottom: 8px;
-            color: #ffcc00;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #bbe1fa;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .number-input {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #3282b8;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .animal-selection {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .animal-selection h3 {
-            margin-bottom: 8px;
-            color: #ffcc00;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #bbe1fa;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .animals-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            max-height: 300px;
+            gap: 10px;
+            max-height: 350px;
             overflow-y: auto;
-            padding: 8px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 2px solid #3282b8;
         }
 
         @media (min-width: 480px) {
@@ -205,33 +262,41 @@
         }
 
         .animal {
-            padding: 10px 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+            padding: 12px 8px;
+            background: linear-gradient(135deg, #3282b8, #0f4c75);
+            border-radius: 8px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid transparent;
-            font-size: 0.85rem;
+            border: 2px solid #bbe1fa;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .animal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .animal.selected {
-            background: #ffcc00;
-            color: #000;
+            background: linear-gradient(45deg, #bbe1fa, #3282b8);
+            color: #0f4c75;
             font-weight: bold;
-            border-color: #fff;
+            border-color: #0f4c75;
+            transform: translateY(-2px);
         }
 
         .animal-number {
-            font-size: 0.7rem;
-            color: #aaa;
-            margin-top: 3px;
+            font-size: 0.75rem;
+            color: #bbe1fa;
+            margin-top: 5px;
+            font-weight: bold;
         }
 
         .game-controls {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         @media (min-width: 480px) {
@@ -241,138 +306,177 @@
         }
 
         button {
-            padding: 14px;
+            padding: 16px;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
             flex: 1;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
         }
 
         .place-bet {
-            background: #4CAF50;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
             color: white;
+            border: 2px solid #a5d6a7;
+        }
+
+        .place-bet:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .place-bet:disabled {
             background: #666;
             cursor: not-allowed;
+            transform: none;
         }
 
         .clear-bet {
-            background: #f44336;
+            background: linear-gradient(45deg, #f44336, #d32f2f);
             color: white;
+            border: 2px solid #ffcdd2;
+        }
+
+        .clear-bet:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .sorteio-area {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px 15px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            background: rgba(13, 36, 54, 0.9);
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
+            border: 2px solid #bbe1fa;
         }
 
         .sorteio-container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px 15px;
-            border-radius: 12px;
-            border: 3px solid #ffcc00;
-            margin: 15px 0;
+            background: linear-gradient(135deg, #0f4c75, #1b262c);
+            padding: 25px 20px;
+            border-radius: 15px;
+            border: 3px solid #bbe1fa;
+            margin: 20px 0;
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
         }
 
         .numero-sorteado {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
-            color: #ffcc00;
-            text-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
-            margin: 15px 0;
+            color: #bbe1fa;
+            text-shadow: 0 0 20px rgba(187, 225, 250, 0.7);
+            margin: 20px 0;
             animation: pulse 2s infinite;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
+            background: linear-gradient(45deg, #bbe1fa, #3282b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         @media (min-width: 480px) {
             .numero-sorteado {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
         }
 
         .animal-sorteado {
-            font-size: 1.5rem;
-            color: #fff;
+            font-size: 1.8rem;
+            color: #bbe1fa;
             margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .dezena-info {
-            font-size: 1rem;
-            color: #ffcc00;
-            margin-top: 8px;
+            font-size: 1.1rem;
+            color: #bbe1fa;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .spin-button {
-            background: #ffcc00;
-            color: #000;
-            font-size: 1.1rem;
-            padding: 14px 30px;
-            margin-top: 8px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1b262c;
+            font-size: 1.2rem;
+            padding: 16px 35px;
+            margin-top: 10px;
             width: 100%;
-            max-width: 250px;
+            max-width: 280px;
+            border: 2px solid #FFD700;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .spin-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(45deg, #FFA500, #FFD700);
         }
 
         .spin-button:disabled {
             background: #666;
             cursor: not-allowed;
+            transform: none;
         }
 
         .result-display {
-            margin: 15px 0;
-            padding: 15px;
-            background: rgba(255, 204, 0, 0.2);
-            border-radius: 8px;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #3282b8, #0f4c75);
+            border-radius: 12px;
             text-align: center;
-            min-height: 100px;
+            min-height: 120px;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            border: 2px solid #bbe1fa;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
         }
 
         .history-panel {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            background: rgba(13, 36, 54, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+            border: 2px solid #3282b8;
         }
 
         .history-panel h2 {
-            margin-bottom: 12px;
-            color: #ffcc00;
+            margin-bottom: 15px;
+            color: #bbe1fa;
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .history-list {
-            max-height: 300px;
+            max-height: 350px;
             overflow-y: auto;
-            padding: 8px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 2px solid #3282b8;
         }
 
         .history-item {
-            padding: 8px 6px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 10px;
+            border-bottom: 2px solid rgba(187, 225, 250, 0.3);
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 8px;
         }
 
         @media (min-width: 480px) {
@@ -385,59 +489,75 @@
 
         .history-item:last-child {
             border-bottom: none;
+            margin-bottom: 0;
         }
 
         .win {
-            color: #4CAF50;
+            color: #a5d6a7;
             font-weight: bold;
+            text-shadow: 0 0 5px rgba(165, 214, 167, 0.5);
         }
 
         .loss {
-            color: #f44336;
+            color: #ffcdd2;
+            text-shadow: 0 0 5px rgba(244, 67, 54, 0.5);
         }
 
         footer {
             text-align: center;
-            margin-top: 15px;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: #aaa;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(13, 36, 54, 0.9);
+            border-radius: 12px;
+            font-size: 0.85rem;
+            color: #bbe1fa;
+            border: 1px solid #3282b8;
         }
 
         .message {
-            padding: 8px;
-            margin: 8px 0;
-            border-radius: 5px;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
             text-align: center;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
         }
 
         .message.win {
-            background: rgba(76, 175, 80, 0.3);
-            border: 1px solid #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border: 2px solid #a5d6a7;
+            color: white;
         }
 
         .message.loss {
-            background: rgba(244, 67, 54, 0.3);
-            border: 1px solid #f44336;
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+            border: 2px solid #ffcdd2;
+            color: white;
         }
 
         .message.info {
-            background: rgba(255, 204, 0, 0.3);
-            border: 1px solid #ffcc00;
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            border: 2px solid #bbdefb;
+            color: white;
         }
 
         .message.error {
-            background: rgba(244, 67, 54, 0.3);
-            border: 1px solid #f44336;
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+            border: 2px solid #ffcdd2;
+            color: white;
         }
 
         .message.success {
-            background: rgba(76, 175, 80, 0.3);
-            border: 1px solid #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border: 2px solid #a5d6a7;
+            color: white;
+        }
+
+        .message.warning {
+            background: linear-gradient(135deg, #FF9800, #F57C00);
+            border: 2px solid #FFE0B2;
+            color: white;
         }
 
         /* Modal de Depósito */
@@ -448,78 +568,102 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(11, 30, 45, 0.95);
             z-index: 1000;
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
-            padding: 25px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #0f4c75, #1b262c);
+            padding: 30px;
+            border-radius: 20px;
             width: 90%;
-            max-width: 400px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            border: 3px solid #ffcc00;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border: 3px solid #bbe1fa;
         }
 
         .modal h2 {
-            color: #ffcc00;
+            color: #bbe1fa;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .modal-input-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .modal-input-group label {
             display: block;
-            margin-bottom: 5px;
-            color: #ffcc00;
+            margin-bottom: 8px;
+            color: #bbe1fa;
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .modal-input-group input {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #3282b8;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .modal-buttons {
             display: flex;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 25px;
         }
 
         .modal-buttons button {
             flex: 1;
-            padding: 12px;
+            padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
         }
 
         .confirm-deposit {
-            background: #4CAF50;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
             color: white;
+            border: 2px solid #a5d6a7;
+        }
+
+        .confirm-deposit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .cancel-deposit {
-            background: #f44336;
+            background: linear-gradient(45deg, #f44336, #d32f2f);
             color: white;
+            border: 2px solid #ffcdd2;
+        }
+
+        .cancel-deposit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse-alert {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); color: #ff6b6b; }
             100% { transform: scale(1); }
         }
 
@@ -533,42 +677,48 @@
         }
 
         .explicacao {
-            background: rgba(255, 204, 0, 0.1);
-            padding: 10px;
-            border-radius: 8px;
-            margin: 8px 0;
-            border-left: 3px solid #ffcc00;
-            font-size: 0.8rem;
+            background: linear-gradient(135deg, rgba(50, 130, 184, 0.3), rgba(15, 76, 117, 0.3));
+            padding: 15px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border-left: 4px solid #bbe1fa;
+            font-size: 0.85rem;
+            border: 1px solid #3282b8;
         }
 
         .explicacao h4 {
-            color: #ffcc00;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
+            color: #bbe1fa;
+            margin-bottom: 8px;
+            font-size: 1rem;
         }
 
         /* Scroll personalizado */
         .animals-grid::-webkit-scrollbar,
         .history-list::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
 
         .animals-grid::-webkit-scrollbar-track,
         .history-list::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
+            border-radius: 4px;
         }
 
         .animals-grid::-webkit-scrollbar-thumb,
         .history-list::-webkit-scrollbar-thumb {
-            background: #ffcc00;
-            border-radius: 3px;
+            background: linear-gradient(45deg, #3282b8, #0f4c75);
+            border-radius: 4px;
+        }
+
+        .animals-grid::-webkit-scrollbar-thumb:hover,
+        .history-list::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #0f4c75, #3282b8);
         }
 
         /* Melhorias de toque para mobile */
         @media (max-width: 767px) {
             .bet-option, .animal, button {
-                min-height: 44px;
+                min-height: 50px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -580,7 +730,7 @@
 
             .admin-btn {
                 position: static;
-                margin-top: 10px;
+                margin-top: 12px;
                 width: 100%;
             }
         }
@@ -592,34 +742,72 @@
             }
             
             .numero-sorteado {
-                font-size: 2rem;
-                letter-spacing: 2px;
+                font-size: 2.5rem;
+                letter-spacing: 3px;
             }
             
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
+        }
+
+        /* Indicador de múltipla seleção */
+        .multi-select-info {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1b262c;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            border: 1px solid #FFD700;
+        }
+
+        /* Modal de Saldo Zerado */
+        .zero-balance-modal {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+            border: 3px solid #ff6b6b;
+        }
+
+        .zero-balance-modal h2 {
+            color: #ff6b6b;
+        }
+
+        .deposit-required {
+            background: linear-gradient(135deg, #FF9800, #F57C00);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            border: 2px solid #FFD700;
+        }
+
+        .deposit-required h3 {
+            color: #1b262c;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Jogo do Bicho Roger Play </h1>
-            <p>Sistema de entretenimento teste...</p>
-            <button class="admin-btn" id="admin-btn"> Depósito</button>
+            <h1>Bet Bicho Premium </h1>
+            <p>Roger Play</p>
+            <button class="admin-btn" id="admin-btn">💰 Depósito</button>
         </header>
 
         <div class="game-area">
             <div class="betting-panel">
                 <div class="player-info">
-                    <div class="balance">Saldo: R$ <span id="balance">100,00</span></div>
+                    <div class="balance" id="balance-display">Saldo: R$ <span id="balance">10,00</span></div>
                     <div class="current-bet">Aposta: R$ <span id="current-bet">0,00</span></div>
                 </div>
 
                 <div class="bet-amount">
                     <h3>Valor da Aposta (R$)</h3>
                     <input type="number" id="bet-value" min="1" max="1000" value="10" step="1">
+                    <button class="max-bet-btn" id="max-bet-btn">MAX</button>
                 </div>
 
                 <div class="bet-type">
@@ -645,7 +833,8 @@
                 </div>
 
                 <div class="animal-selection" id="animal-selection" style="display: none;">
-                    <h3>Escolha o Bicho</h3>
+                    <h3>Escolha até 3 Bichos</h3>
+                    <div class="multi-select-info">💡 Clique em até 3 bichos para apostar</div>
                     <div class="animals-grid" id="animals-grid">
                         <!-- Os animais serão inseridos via JavaScript -->
                     </div>
@@ -660,7 +849,7 @@
             </div>
 
             <div class="sorteio-area">
-                <h2>Área de Sorteio</h2>
+                <h2> Área de Sorteio</h2>
                 <div class="sorteio-container">
                     <h3>Número Sorteado:</h3>
                     <div class="numero-sorteado" id="numero-sorteado">0000</div>
@@ -672,7 +861,7 @@
                     <div id="last-result">Faça sua aposta e clique em Sortear!</div>
                 </div>
 
-                <button class="spin-button" id="spin-button" disabled>Sortear Número</button>
+                <button class="spin-button" id="spin-button" disabled>🎲 Sortear Número</button>
             </div>
         </div>
 
@@ -684,14 +873,14 @@
         </div>
 
         <footer>
-            <p>Este é um jogo educativo para fins de entretenimento. Roger Plya.</p>
+            <p>Este é um jogo educativo para fins de entretenimento. Roger Play.</p>
         </footer>
     </div>
 
-    <!-- Modal de Depósito -->
+    <!-- Modal de Depósito Normal -->
     <div class="modal" id="deposit-modal">
         <div class="modal-content">
-            <h2>💰 Depósito</h2>
+            <h2>💰 Sistema de Depósito</h2>
             <div class="modal-input-group">
                 <label for="deposit-amount">Valor do Depósito (R$):</label>
                 <input type="number" id="deposit-amount" min="1" max="10000" value="200" step="1">
@@ -702,14 +891,37 @@
             </div>
             <div id="deposit-message"></div>
             <div class="modal-buttons">
-                <button class="confirm-deposit" id="confirm-deposit">Confirmar Depósito</button>
-                <button class="cancel-deposit" id="cancel-deposit">Cancelar</button>
+                <button class="confirm-deposit" id="confirm-deposit">✅ Confirmar</button>
+                <button class="cancel-deposit" id="cancel-deposit">❌ Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Saldo Zerado (Obrigatório) -->
+    <div class="modal" id="zero-balance-modal">
+        <div class="modal-content zero-balance-modal">
+            <h2>⚠️ Saldo Zerado</h2>
+            <div class="deposit-required">
+                <h3>💰 Depósito Obrigatório</h3>
+                <p>Seu saldo chegou a zero. Você precisa fazer um depósito para continuar jogando.</p>
+            </div>
+            <div class="modal-input-group">
+                <label for="zero-deposit-amount">Valor do Depósito (R$):</label>
+                <input type="number" id="zero-deposit-amount" min="1" max="10000" value="100" step="1">
+            </div>
+            <div class="modal-input-group">
+                <label for="zero-admin-password">Senha de Administração:</label>
+                <input type="password" id="zero-admin-password" placeholder="Digite a senha">
+            </div>
+            <div id="zero-deposit-message"></div>
+            <div class="modal-buttons">
+                <button class="confirm-deposit" id="zero-confirm-deposit">✅ Fazer Depósito</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Dados do jogo CORRETOS - baseados nos 2 últimos dígitos
+        // Dados do jogo
         const animals = [
             { id: 1, name: "Avestruz", dezenas: ["01", "02", "03", "04"] },
             { id: 2, name: "Águia", dezenas: ["05", "06", "07", "08"] },
@@ -739,19 +951,22 @@
         ];
 
         // Estado do jogo
-        let balance = 100.00;
+        let balance = parseFloat(localStorage.getItem('jogoBichoSaldo')) || 100.00;
         let currentBet = null;
-        let gameHistory = [];
+        let gameHistory = JSON.parse(localStorage.getItem('jogoBichoHistorico')) || [];
         let isSorting = false;
 
-        // Configurações de administração
-        const ADMIN_PASSWORD = "16852016@"; // Senha padrão - pode ser alterada
-        const MAX_DEPOSIT = 10000; // Depósito máximo permitido
+        // Configurações
+        const ADMIN_PASSWORD = "123456";
+        const MAX_DEPOSIT = 10000;
+        const MAX_ANIMAL_BETS = 3;
 
         // Elementos DOM
         const balanceElement = document.getElementById('balance');
+        const balanceDisplay = document.getElementById('balance-display');
         const currentBetElement = document.getElementById('current-bet');
         const betValueElement = document.getElementById('bet-value');
+        const maxBetBtn = document.getElementById('max-bet-btn');
         const betOptions = document.querySelectorAll('.bet-option');
         const numberSelection = document.getElementById('number-selection');
         const numberInput = document.getElementById('number-input');
@@ -767,7 +982,7 @@
         const historyList = document.getElementById('history-list');
         const messageArea = document.getElementById('message-area');
         
-        // Elementos do modal de depósito
+        // Elementos dos modais
         const adminBtn = document.getElementById('admin-btn');
         const depositModal = document.getElementById('deposit-modal');
         const depositAmount = document.getElementById('deposit-amount');
@@ -776,14 +991,65 @@
         const cancelDeposit = document.getElementById('cancel-deposit');
         const depositMessage = document.getElementById('deposit-message');
 
+        const zeroBalanceModal = document.getElementById('zero-balance-modal');
+        const zeroDepositAmount = document.getElementById('zero-deposit-amount');
+        const zeroAdminPassword = document.getElementById('zero-admin-password');
+        const zeroConfirmDeposit = document.getElementById('zero-confirm-deposit');
+        const zeroDepositMessage = document.getElementById('zero-deposit-message');
+
         // Inicialização
         function init() {
             renderAnimalsGrid();
             setupEventListeners();
             updateUI();
+            saveGameState();
+            checkZeroBalance();
         }
 
-        // Renderizar grade de animais para seleção
+        // Salvar estado do jogo
+        function saveGameState() {
+            localStorage.setItem('jogoBichoSaldo', balance.toFixed(2));
+            localStorage.setItem('jogoBichoHistorico', JSON.stringify(gameHistory));
+        }
+
+        // Verificar se saldo zerou
+        function checkZeroBalance() {
+            if (balance <= 0) {
+                showZeroBalanceModal();
+            }
+        }
+
+        // Mostrar modal de saldo zerado
+        function showZeroBalanceModal() {
+            zeroBalanceModal.style.display = 'flex';
+            zeroDepositAmount.value = '100';
+            zeroAdminPassword.value = '';
+            zeroDepositMessage.innerHTML = '';
+            
+            // Desabilitar todos os controles do jogo
+            disableGameControls();
+        }
+
+        // Desabilitar controles do jogo
+        function disableGameControls() {
+            placeBetButton.disabled = true;
+            spinButton.disabled = true;
+            betValueElement.disabled = true;
+            numberInput.disabled = true;
+            betOptions.forEach(opt => opt.style.pointerEvents = 'none');
+            document.querySelectorAll('.animal').forEach(a => a.style.pointerEvents = 'none');
+        }
+
+        // Habilitar controles do jogo
+        function enableGameControls() {
+            betValueElement.disabled = false;
+            numberInput.disabled = false;
+            betOptions.forEach(opt => opt.style.pointerEvents = 'auto');
+            document.querySelectorAll('.animal').forEach(a => a.style.pointerEvents = 'auto');
+            updateUI();
+        }
+
+        // Renderizar grade de animais
         function renderAnimalsGrid() {
             animalsGrid.innerHTML = '';
             animals.forEach(animal => {
@@ -800,10 +1066,22 @@
 
         // Configurar event listeners
         function setupEventListeners() {
+            // Botão MAX
+            maxBetBtn.addEventListener('click', () => {
+                if (balance > 0) {
+                    betValueElement.value = Math.floor(balance);
+                    if (currentBet) {
+                        currentBet.value = parseFloat(betValueElement.value);
+                    }
+                    updateUI();
+                    showMessage(`Valor definido para seu saldo total: R$ ${Math.floor(balance).toFixed(2)}`, 'info');
+                }
+            });
+
             // Opções de aposta
             betOptions.forEach(option => {
                 option.addEventListener('click', () => {
-                    if (isSorting) return;
+                    if (isSorting || balance <= 0) return;
                     
                     betOptions.forEach(opt => opt.classList.remove('selected'));
                     option.classList.add('selected');
@@ -811,24 +1089,22 @@
                     const betType = option.dataset.type;
                     currentBet = { 
                         type: betType, 
-                        value: parseFloat(betValueElement.value) || 0 
+                        value: parseFloat(betValueElement.value) || 0,
+                        animals: []
                     };
                     
-                    // Mostrar seleção apropriada
                     if (betType === 'animal') {
                         numberSelection.style.display = 'none';
                         animalSelection.style.display = 'block';
                         currentBet.number = null;
                         numberInput.value = '';
+                        document.querySelectorAll('.animal').forEach(a => a.classList.remove('selected'));
                     } else {
                         numberSelection.style.display = 'block';
                         animalSelection.style.display = 'none';
-                        currentBet.animal = null;
-                        
-                        // Limpar seleção de animais
+                        currentBet.animals = [];
                         document.querySelectorAll('.animal').forEach(a => a.classList.remove('selected'));
                         
-                        // Configurar limites de entrada
                         if (betType === 'ten') {
                             numberInput.min = 0;
                             numberInput.max = 99;
@@ -850,10 +1126,9 @@
             
             // Entrada de número
             numberInput.addEventListener('input', () => {
-                if (currentBet && !isSorting) {
+                if (currentBet && !isSorting && balance > 0) {
                     let value = parseInt(numberInput.value) || null;
                     
-                    // Garantir que o número tenha o número correto de dígitos
                     if (value !== null) {
                         if (currentBet.type === 'ten' && value < 10) {
                             value = parseInt(value.toString().padStart(2, '0'));
@@ -870,58 +1145,9 @@
                 }
             });
             
-            // Seleção de animal
-            animalsGrid.addEventListener('click', (e) => {
-                if (isSorting) return;
-                
-                const animalElement = e.target.closest('.animal');
-                if (animalElement) {
-                    const animalId = parseInt(animalElement.dataset.id);
-                    
-                    document.querySelectorAll('.animal').forEach(a => a.classList.remove('selected'));
-                    animalElement.classList.add('selected');
-                    
-                    if (currentBet) {
-                        currentBet.animal = animalId;
-                        currentBet.number = null;
-                        numberInput.value = '';
-                        updateUI();
-                    }
-                }
-            });
-            
-            // Botão de fazer aposta
-            placeBetButton.addEventListener('click', () => {
-                if (isSorting) return;
-                
-                if (currentBet && currentBet.value > 0 && currentBet.value <= balance) {
-                    if ((currentBet.type === 'animal' && currentBet.animal) || 
-                        (currentBet.type !== 'animal' && currentBet.number !== null)) {
-                        
-                        balance -= currentBet.value;
-                        spinButton.disabled = false;
-                        placeBetButton.disabled = true;
-                        showMessage('Aposta confirmada! Clique em "Sortear Número"', 'info');
-                        updateUI();
-                    } else {
-                        showMessage('Selecione um número ou bicho para apostar!', 'loss');
-                    }
-                }
-            });
-            
-            // Botão de limpar aposta
-            clearBetButton.addEventListener('click', () => {
-                if (!isSorting) {
-                    resetBet();
-                }
-            });
-            
-            // Botão de sortear número
-            spinButton.addEventListener('click', sortearNumero);
-            
-            // Atualizar valor da aposta
+            // Entrada de valor da aposta
             betValueElement.addEventListener('input', () => {
-                if (currentBet && !isSorting) {
+                if (currentBet && !isSorting && balance > 0) {
                     const newValue = parseFloat(betValueElement.value) || 0;
                     if (newValue > 0 && newValue <= 1000) {
                         currentBet.value = newValue;
@@ -931,21 +1157,113 @@
                     updateUI();
                 }
             });
+            
+            // Seleção de animal
+            animalsGrid.addEventListener('click', (e) => {
+                if (isSorting || !currentBet || currentBet.type !== 'animal' || balance <= 0) return;
+                
+                const animalElement = e.target.closest('.animal');
+                if (animalElement) {
+                    const animalId = parseInt(animalElement.dataset.id);
+                    const isSelected = animalElement.classList.contains('selected');
+                    
+                    if (isSelected) {
+                        animalElement.classList.remove('selected');
+                        currentBet.animals = currentBet.animals.filter(id => id !== animalId);
+                    } else {
+                        if (currentBet.animals.length < MAX_ANIMAL_BETS) {
+                            animalElement.classList.add('selected');
+                            currentBet.animals.push(animalId);
+                        } else {
+                            showMessage(`Máximo de ${MAX_ANIMAL_BETS} bichos permitidos!`, 'info');
+                        }
+                    }
+                    
+                    updateUI();
+                }
+            });
+            
+            // Botão de fazer aposta - CORREÇÃO: Débito funcionando
+            placeBetButton.addEventListener('click', () => {
+                if (isSorting || balance <= 0) return;
+                
+                if (currentBet && currentBet.value > 0) {
+                    let isValid = false;
+                    
+                    if (currentBet.type === 'animal') {
+                        isValid = currentBet.animals.length > 0 && currentBet.animals.length <= MAX_ANIMAL_BETS;
+                    } else {
+                        isValid = currentBet.number !== null;
+                    }
+                    
+                    if (isValid) {
+                        // CORREÇÃO: Débito do saldo funcionando
+                        if (currentBet.value > balance) {
+                            showMessage('Saldo insuficiente para esta aposta!', 'error');
+                            return;
+                        }
+                        
+                        // DÉBITO DO SALDO - AGORA FUNCIONANDO
+                        balance -= currentBet.value;
+                        spinButton.disabled = false;
+                        placeBetButton.disabled = true;
+                        
+                        showMessage(`Aposta de R$ ${currentBet.value.toFixed(2)} confirmada! Saldo debitado.`, 'info');
+                        updateUI();
+                        saveGameState();
+                        
+                        // Verificar se saldo zerou após aposta
+                        if (balance <= 0) {
+                            setTimeout(() => {
+                                showZeroBalanceModal();
+                            }, 1000);
+                        }
+                    } else {
+                        if (currentBet.type === 'animal') {
+                            showMessage(`Selecione de 1 a ${MAX_ANIMAL_BETS} bichos para apostar!`, 'loss');
+                        } else {
+                            showMessage('Selecione um número para apostar!', 'loss');
+                        }
+                    }
+                }
+            });
+            
+            // Botão de limpar aposta
+            clearBetButton.addEventListener('click', () => {
+                if (!isSorting && balance > 0) {
+                    resetBet();
+                }
+            });
+            
+            // Botão de sortear número
+            spinButton.addEventListener('click', sortearNumero);
 
-            // Sistema de depósito
+            // Sistema de depósito normal
             adminBtn.addEventListener('click', openDepositModal);
             confirmDeposit.addEventListener('click', processDeposit);
             cancelDeposit.addEventListener('click', closeDepositModal);
             
-            // Fechar modal ao clicar fora
+            // Sistema de depósito obrigatório (saldo zerado)
+            zeroConfirmDeposit.addEventListener('click', processZeroDeposit);
+
+            // Fechar modais ao clicar fora
             depositModal.addEventListener('click', (e) => {
                 if (e.target === depositModal) {
                     closeDepositModal();
                 }
             });
+
+            zeroBalanceModal.addEventListener('click', (e) => {
+                if (e.target === zeroBalanceModal) {
+                    // Não permite fechar o modal de saldo zerado
+                    showZeroDepositMessage('É obrigatório fazer um depósito para continuar jogando!', 'warning');
+                }
+            });
+
+            window.addEventListener('beforeunload', saveGameState);
         }
 
-        // Abrir modal de depósito
+        // Abrir modal de depósito normal
         function openDepositModal() {
             depositModal.style.display = 'flex';
             depositAmount.value = '200';
@@ -953,18 +1271,17 @@
             depositMessage.innerHTML = '';
         }
 
-        // Fechar modal de depósito
+        // Fechar modal de depósito normal
         function closeDepositModal() {
             depositModal.style.display = 'none';
             depositMessage.innerHTML = '';
         }
 
-        // Processar depósito
+        // Processar depósito normal
         function processDeposit() {
             const amount = parseFloat(depositAmount.value);
             const password = adminPassword.value.trim();
 
-            // Validações
             if (!amount || amount <= 0) {
                 showDepositMessage('Valor inválido!', 'error');
                 return;
@@ -980,21 +1297,57 @@
                 return;
             }
 
-            // Processar depósito
             balance += amount;
             updateUI();
+            saveGameState();
             showDepositMessage(`Depósito de R$ ${amount.toFixed(2)} realizado com sucesso!`, 'success');
             
-            // Fechar modal após 2 segundos
             setTimeout(() => {
                 closeDepositModal();
                 showMessage(`Crédito de R$ ${amount.toFixed(2)} adicionado com sucesso!`, 'success');
             }, 2000);
         }
 
-        // Mostrar mensagem no modal de depósito
+        // Processar depósito obrigatório (saldo zerado)
+        function processZeroDeposit() {
+            const amount = parseFloat(zeroDepositAmount.value);
+            const password = zeroAdminPassword.value.trim();
+
+            if (!amount || amount <= 0) {
+                showZeroDepositMessage('Valor inválido!', 'error');
+                return;
+            }
+
+            if (amount > MAX_DEPOSIT) {
+                showZeroDepositMessage(`Valor máximo permitido: R$ ${MAX_DEPOSIT.toFixed(2)}`, 'error');
+                return;
+            }
+
+            if (password !== ADMIN_PASSWORD) {
+                showZeroDepositMessage('Senha incorreta!', 'error');
+                return;
+            }
+
+            balance += amount;
+            updateUI();
+            saveGameState();
+            showZeroDepositMessage(`Depósito de R$ ${amount.toFixed(2)} realizado com sucesso!`, 'success');
+            
+            setTimeout(() => {
+                zeroBalanceModal.style.display = 'none';
+                enableGameControls();
+                showMessage(`Depósito de R$ ${amount.toFixed(2)} realizado! Agora você pode continuar jogando.`, 'success');
+            }, 2000);
+        }
+
+        // Mostrar mensagem no modal de depósito normal
         function showDepositMessage(text, type) {
             depositMessage.innerHTML = `<div class="message ${type}">${text}</div>`;
+        }
+
+        // Mostrar mensagem no modal de depósito obrigatório
+        function showZeroDepositMessage(text, type) {
+            zeroDepositMessage.innerHTML = `<div class="message ${type}">${text}</div>`;
         }
 
         // Mostrar mensagem
@@ -1009,24 +1362,39 @@
         function updateUI() {
             balanceElement.textContent = balance.toFixed(2).replace('.', ',');
             
-            if (currentBet) {
+            // Atualizar estilo do saldo
+            if (balance <= 0) {
+                balanceDisplay.classList.add('zero');
+            } else {
+                balanceDisplay.classList.remove('zero');
+            }
+            
+            if (currentBet && balance > 0) {
                 currentBetElement.textContent = currentBet.value.toFixed(2).replace('.', ',');
                 
-                // Verificar se a aposta é válida
-                const isValid = currentBet.value > 0 && 
-                    currentBet.value <= balance && 
-                    ((currentBet.type === 'animal' && currentBet.animal) || 
-                     (currentBet.type !== 'animal' && currentBet.number !== null));
+                let isValid = currentBet.value > 0 && currentBet.value <= balance;
+                
+                if (currentBet.type === 'animal') {
+                    isValid = isValid && currentBet.animals.length > 0 && currentBet.animals.length <= MAX_ANIMAL_BETS;
+                } else {
+                    isValid = isValid && currentBet.number !== null;
+                }
                 
                 placeBetButton.disabled = !isValid || isSorting;
+                
+                if (currentBet.type === 'animal' && currentBet.animals.length > 0) {
+                    placeBetButton.textContent = `Apostar em ${currentBet.animals.length} Bicho(s)`;
+                } else {
+                    placeBetButton.textContent = 'Fazer Aposta';
+                }
             } else {
                 currentBetElement.textContent = '0,00';
                 placeBetButton.disabled = true;
+                placeBetButton.textContent = 'Fazer Aposta';
             }
             
-            spinButton.disabled = !currentBet || isSorting;
+            spinButton.disabled = !currentBet || isSorting || balance <= 0;
             
-            // Atualizar histórico
             renderHistory();
         }
 
@@ -1040,18 +1408,18 @@
             document.querySelectorAll('.animal').forEach(a => a.classList.remove('selected'));
             spinButton.disabled = true;
             placeBetButton.disabled = true;
+            placeBetButton.textContent = 'Fazer Aposta';
             showMessage('Aposta limpa!', 'info');
             updateUI();
         }
 
         // Sortear número de 4 dígitos
         function sortearNumero() {
-            if (!currentBet || isSorting) return;
+            if (!currentBet || isSorting || balance <= 0) return;
             
             isSorting = true;
             spinButton.disabled = true;
             
-            // Animação de contagem regressiva
             let count = 3;
             const countdown = setInterval(() => {
                 numeroSorteadoElement.textContent = "????";
@@ -1062,21 +1430,16 @@
                 if (count < 0) {
                     clearInterval(countdown);
                     
-                    // Sortear número final de 4 dígitos (0000 a 9999)
                     const numeroSorteado = Math.floor(Math.random() * 10000);
                     const numeroFormatado = numeroSorteado.toString().padStart(4, '0');
-                    
-                    // Determinar o bicho pelos 2 ÚLTIMOS dígitos (CORREÇÃO)
-                    const dezena = numeroFormatado.slice(2); // Pega os 2 últimos dígitos
+                    const dezena = numeroFormatado.slice(2);
                     const animalSorteado = getAnimalByDezena(dezena);
                     
-                    // Mostrar resultado
                     numeroSorteadoElement.textContent = numeroFormatado;
                     animalSorteadoElement.textContent = animalSorteado.name;
                     dezenaInfoElement.textContent = `Dezena: ${dezena}`;
                     numeroSorteadoElement.classList.add('sorteio-animacao');
                     
-                    // Verificar resultado
                     setTimeout(() => {
                         checkWin(numeroFormatado, animalSorteado, dezena);
                         isSorting = false;
@@ -1086,11 +1449,11 @@
             }, 300);
         }
 
-        // Obter animal pela DEZENA (2 últimos dígitos) - CORREÇÃO
+        // Obter animal pela DEZENA
         function getAnimalByDezena(dezena) {
             return animals.find(animal => 
                 animal.dezenas.includes(dezena)
-            ) || animals[24]; // Vaca como fallback (inclui "00")
+            ) || animals[24];
         }
 
         // Verificar se ganhou
@@ -1102,50 +1465,50 @@
             
             switch (currentBet.type) {
                 case 'animal':
-                    // Para aposta em bicho, verifica se o animal apostado corresponde ao animal sorteado
-                    win = currentBet.animal === animalSorteado.id;
+                    win = currentBet.animals.includes(animalSorteado.id);
                     multiplier = 18;
                     break;
                 case 'ten':
-                    // Para dezena, verifica os 2 últimos dígitos
                     const dezenaAposta = currentBet.number.toString().padStart(2, '0');
                     win = dezenaAposta === dezenaSorteada;
                     multiplier = 60;
                     break;
                 case 'hundred':
-                    // Para centena, verifica os 3 últimos dígitos
                     const centenaSorteada = numeroSorteado.slice(1);
                     const centenaAposta = currentBet.number.toString().padStart(3, '0');
                     win = centenaAposta === centenaSorteada;
                     multiplier = 600;
                     break;
                 case 'thousand':
-                    // Para milhar, verifica os 4 dígitos
                     const milharAposta = currentBet.number.toString().padStart(4, '0');
                     win = milharAposta === numeroSorteado;
                     multiplier = 4000;
                     break;
             }
             
-            // Adicionar ao histórico
+            const winAmount = win ? currentBet.value * multiplier : 0;
+            if (win) {
+                balance += winAmount;
+            }
+            
             gameHistory.unshift({
                 numero: numeroSorteado,
                 animal: animalSorteado.name,
                 dezena: dezenaSorteada,
                 ganhou: win,
-                premio: win ? currentBet.value * multiplier : 0,
+                premio: winAmount,
+                valorAposta: currentBet.value,
+                animaisApostados: currentBet.type === 'animal' ? 
+                    currentBet.animals.map(id => animals.find(a => a.id === id).name) : [],
                 timestamp: new Date(),
                 tipoAposta: currentBet.type
             });
             
-            // Manter apenas os últimos 10 resultados
             if (gameHistory.length > 10) {
                 gameHistory.pop();
             }
             
             if (win) {
-                const winAmount = currentBet.value * multiplier;
-                balance += winAmount;
                 lastResultElement.innerHTML = `<span class="win">🎉 Você ganhou R$ ${winAmount.toFixed(2).replace('.', ',')}! 🎉</span>`;
                 showMessage(`Parabéns! Você ganhou R$ ${winAmount.toFixed(2).replace('.', ',')}!`, 'win');
             } else {
@@ -1154,6 +1517,14 @@
             }
             
             updateUI();
+            saveGameState();
+            
+            // Verificar se saldo zerou após o resultado
+            if (balance <= 0) {
+                setTimeout(() => {
+                    showZeroBalanceModal();
+                }, 2000);
+            }
         }
 
         // Renderizar histórico
@@ -1175,12 +1546,20 @@
                 });
                 
                 const resultado = item.ganhou ? 
-                    `<span class="win">GANHOU R$ ${item.premio.toFixed(2).replace('.', ',')}</span>` : 
-                    `<span class="loss">PERDEU</span>`;
+                    `<span class="win">+R$ ${item.premio.toFixed(2).replace('.', ',')}</span>` : 
+                    `<span class="loss">-R$ ${item.valorAposta.toFixed(2).replace('.', ',')}</span>`;
+                
+                let animaisInfo = '';
+                if (item.tipoAposta === 'animal' && item.animaisApostados.length > 0) {
+                    animaisInfo = `<div style="font-size: 0.8rem; color: #bbe1fa;">Bichos: ${item.animaisApostados.join(', ')}</div>`;
+                }
                 
                 historyItem.innerHTML = `
                     <div>${time}</div>
-                    <div><strong>${item.numero}</strong> - ${item.animal}</div>
+                    <div>
+                        <strong>${item.numero}</strong> - ${item.animal}
+                        ${animaisInfo}
+                    </div>
                     <div>${resultado}</div>
                 `;
                 
